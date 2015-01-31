@@ -9,14 +9,14 @@ class Empty_Directory {
             $dir = str_replace('/index' . CONTENT_EXT, '', $file);
             if(is_dir($dir)){
                 $content = "Directory";
+                return true;
             }
-            return true;
         } elseif (Text::ends_with($file, CONTENT_EXT)) {
             $dir = substr($file, 0, -strlen(CONTENT_EXT));
             if(is_dir($dir)){
                 $content = "Directory";
+                return true;
             }
-            return true;
         }
         return false;
     }
